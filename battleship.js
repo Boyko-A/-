@@ -17,7 +17,7 @@ while (isSunk == false) {
 		guesses = guesses + 1;
 			
 		if (emptyArr.includes(guess)) {
-			alert('Ты сюда уже стрелял!');
+			alert('Эй, на палубе! Ты сюда уже стрелял!');
 			guesses = guesses + 1;
 		} else {
 			if (guess == location1 || guess == location2 || guess == location3) {
