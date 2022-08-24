@@ -11,7 +11,7 @@ var isSunk = false;
 while (isSunk == false) {
 	guess = prompt ("Абордажные клинки оголить! (введи цифру 0-6):");
 	if (guess < 0 || guess > 6) { /*проверка значения в диапазоне*/
-		alert("Разрази меня гром! (цифры только от 0 до 6");
+		alert("Разрази меня гром! (цифры только от 0 до 6)");
 	} else {
 		guesses = guesses + 1;
 		if (guess == location1 || guess == location2 || guess == location3) {
