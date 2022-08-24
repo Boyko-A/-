@@ -7,6 +7,7 @@ var guess;
 var hits = 0;
 var guesses = 0;
 var isSunk = false;
+var emptyArr = [];
 
 while (isSunk == false) {
 	guess = prompt ("Абордажные клинки оголить! (введи цифру 0-6):");
@@ -14,15 +15,22 @@ while (isSunk == false) {
 		alert("Разрази меня гром! (цифры только от 0 до 6)");
 	} else {
 		guesses = guesses + 1;
-		if (guess == location1 || guess == location2 || guess == location3) {
-			alert("Ранил");
-			hits = hits + 1;
-			if (hits == 3) {
-				isSunk = true;
-				alert("Победа! Корабль отправился кормить рыб.");
-			}
+			
+		if (emptyArr.includes(guess)) {
+			alert('Ты сюда уже стрелял!');
+			guesses = guesses + 1;
 		} else {
-			alert("Промазал");
+			if (guess == location1 || guess == location2 || guess == location3) {
+				alert("Ранил");
+				emptyArr.push(guess);
+				hits = hits + 1;
+				if (hits == 3) {
+					isSunk = true;
+					alert("Победа! Корабль отправился кормить рыб.");
+				}
+			} else {
+				alert("Промазал");
+			}
 		}
 	}
 }
